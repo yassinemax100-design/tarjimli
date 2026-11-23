@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: tarjimli
+    runtime: docker
+    plan: starter
+    healthCheckPath: /api/health
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: MAX_UPLOAD_MB
+        value: "100"
+      - key: MAX_DURATION_SECONDS
+        value: "600"
